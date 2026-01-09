@@ -1,12 +1,151 @@
 :root{
   --primary-color: #8a76e8;
-  --secondary-color: #fcebeb;
-  --cart-home-color: #3b8880;
-  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --secondary-color: #fffaee;
+  --nav-color: #fff; 
+  --cart-home-color: #3b8880; 
 }
 *{
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: var(--font-family);
+  box-sizing: border-box; 
+  font-family: "Roboto", sans-serif;
 }
+/*CSS Homepage*/
+
+/*Navbar Section*/
+nav{  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+  background-color: var(--nav-color);
+  position: static;
+}
+nav .logo{
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: -2px;
+}
+nav .nav-links{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 40px;
+}
+nav .nav-links a{
+  text-decoration: none;
+  color: #333;
+  font-size: 13px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.info_icon{
+  font-size: 22px;
+  color: var(--primary-color);
+
+
+}
+.info_icon:hover{
+  color: var(--cart-home-color);
+  cursor: pointer;
+}
+nav .nav-links a:hover{
+  color: var(--primary-color);
+}
+/*End of Navbar Section*/
+/*header Section*/
+header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 5%;
+  padding-right: 5%;
+  height: 80vh;
+  background-color: var(--secondary-color);
+}
+header .img_header{
+  width: 60%;
+  background-image: url("https://cdn-oc-static.imgix.net/production/modules/sdzv4-main/latest/images/home_banner-16deed9ecd0a8ef5b79c.jpg?auto=compress,format&q=60&w=568&dpr=2");
+  background-size: cover;
+  height: 300px;
+  
+}
+header .text_header h1{
+  font-size: 50px;
+  color: #333;
+  margin-bottom: 40px;
+ 
+}
+
+.bigheader_card{
+ display: flex;
+ margin-left: 5%;
+ margin-right: 5%;
+ margin-top: -8%;
+}
+.student_card{ 
+  transition: 0.3s;
+  width:50%;
+  border-top: solid 10px rgb(252, 189, 100);
+  background-color:#fdf3e7;
+  border-radius: 5px;
+  height: 200px;
+  margin: 20px;
+  justify-self:center;
+  padding: 10px;
+  align-items: center; 
+}
+
+.employeur_card{
+ border-top: solid 10px var(--primary-color);
+  width: 50%;
+  border-radius: 5px;
+  background-color:#d2dde8; 
+  height: 200px;
+  margin: 20px;
+  justify-self:center;
+  padding: 10px;
+  align-items: center; 
+}
+.student_card:hover{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.employeur_card:hover{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.student_card p, .employeur_card p{
+  margin-top: 15px;
+  margin-bottom: 10px;
+  color: #333;
+}
+.student_card h1, .employeur_card h1{
+  font-weight: 200;
+}
+.primary_button{
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+.secondary_button{
+  
+  color: var(--primary-color);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+
+/*End of header Section*/
