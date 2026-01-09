@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push: {
+    branches: [ "main" ]
+  }
+
+jobs:
+  build:
+    name: CI / build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Installation des dépendances
+        run: |
+          echo "== Installation en cours =="
+          if [ -f package.json ]; then npm ci || true; else echo "no package.json, skipping"; fi
+      - name: Linting
+        run: npm run lint
+      - name: Run tests
+        run: |
+          echo "== Test step (simulated) =="
+      
+          if npm run | grep -q "test"; then npm test; else echo "no test script, OK"; fi
