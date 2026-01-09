@@ -1,7 +1,9 @@
 name: CI
 
 on:
-  push: {}
+  push: {
+    branches: [ "main" ]
+  }
 
 jobs:
   build:
@@ -16,13 +18,14 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install dependencies
+      - name: Installation des dépendances
         run: |
-          echo "== Install step (simulated) =="
+          echo "== Installation en cours =="
           if [ -f package.json ]; then npm ci || true; else echo "no package.json, skipping"; fi
-
+      - name: Linting
+        run: npm run lint
       - name: Run tests
         run: |
           echo "== Test step (simulated) =="
-          # If a test script exists, run it; otherwise simulate success
+      
           if npm run | grep -q "test"; then npm test; else echo "no test script, OK"; fi
